@@ -1,0 +1,27 @@
+{
+  "name": "book_a_meal",
+  "version": "1.0.0",
+  "description": "Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omobolanle-Arogundade/book_a_meal.git"
+  },
+  "author": "Bolanle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omobolanle-Arogundade/book_a_meal/issues"
+  },
+  "homepage": "https://github.com/Omobolanle-Arogundade/book_a_meal#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
