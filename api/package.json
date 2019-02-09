@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/Omobolanle-Arogundade/book_a_meal.git"
   },
+  "keywords": [
+    "Book-a-Meal",
+    "Andela"
+  ],
   "author": "Bolanle",
   "license": "ISC",
   "bugs": {
