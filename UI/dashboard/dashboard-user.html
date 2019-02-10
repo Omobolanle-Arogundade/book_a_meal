@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./dashboard.css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a class="active" onclick="openNav()"><i class="fa fa-fw fa-bars"></i> Menu</a>
+
+    </div>
+
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <div class="head">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+        <div id="user" class="user">
+            <div class="h3 username">Omobolanle</div>
+            <div class="h5 email">omobolanlearogundade@gmail.com</div>
+            <div class="avatar-container">
+                <!-- <img class="avatar"
+                    src="https://secure.gravatar.com/avatar/0d3552941f3b4cccd02cb1be35ce15ba.jpg?s=180&amp;d=https%3A%2F%2Fs3.amazonaws.com%2Fdrivendata%2Fimages%2Fgravatar-drivendata-default.png&amp;r=g"
+                    width="180" height="180" alt=""> -->
+                    <img class="avatar" src="https://graph.facebook.com/1818524094849369/picture" width="180" height="180" alt="">
+                <!-- <img class="avatar" src="http://www.gravatar.com"> -->
+            </div>
+        </div>
+        <div class="navbar-content">
+            <div class="nav">
+                <div class="user-title">
+                    <span>User</span>
+                </div>
+                <a class="nav-link active" target="_self" href="">
+                    <div class="nav-link-icon" aria-hidden="true"></div>
+                    <span class="nav-link-title active">Dashboard</span>
+                </a>
+                <!-- <a class="nav-link" target="_self" href="">
+                        <div class="nav-link-icon"aria-hidden="true"></div>
+                        <span class="nav-link-title ">Profile</span>
+                    </a> -->
+                <a class="nav-link" target="_self" href="../manage-meal/manage-meal.html">
+                    <div class="nav-link-icon" aria-hidden="true"></div>
+                    <span class="nav-link-title ">Meals</span>
+                </a>
+                <a class="nav-link" target="_self" href="../orders/orders.html">
+                    <div class="nav-link-icon" aria-hidden="true"></div>
+                    <span class="nav-link-title ">Orders</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="main">
+        <div class="profile-header">
+            <div class="container">
+                <div class="row row-height center">
+                    <div class="col-sm-3">
+                        <a target="_blank" class="user_avatar">
+                            <img class="gravatar-profile"
+                                src="https://graph.facebook.com/1818524094849369/picture"
+                                width="180" height="180" alt="">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <h2>Ombolanle</h2>
+                        <h4>omobolanlearogundade@gmail.com</h4>
+                    </div>
+                    <div class="col-sm-5 text-right">
+                        <ul class="list-inline user-stats">
+                            <li>0
+                                <i class="fas fa-shopping-cart"></i>
+                                <!-- <small>Cart</small> -->
+                            </li>
+                            <li>8
+                                <small>Meals</small>
+                            </li>
+                            <li>3
+                                <small>Caterers</small>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Today's Menu</h2>
+            <hr>
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openMeals(event, 'showAll')">Show All</button>
+
+                <button class="tablinks" onclick="openMeals(event, 'Caterer 1')">Caterer 1</button>
+                <button class="tablinks" onclick="openMeals(event, 'Caterer 2')">Caterer 2</button>
+                <button class="tablinks" onclick="openMeals(event, 'Caterer 3')">Caterer 3</button>
+            </div>
+
+            <!-- Tab content -->
+            <div id="showAll" class="tabcontent">
+                <div class="row center-image">
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/Nigerian-Coconut-Jollof-rice-coconut-rice.png" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>Coconut Jollof</h1>
+                                <p>N500</p>
+                                <div>
+                                    <i onclick="toggleLike(this)" class="fas fa-plus-circle" style="font-size: 2em"></i>
+                                    <i class="fas fa-minus-circle" style="font-size: 2em"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/Nigerian-seafood-pepper-soup.png" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1></h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/asaro nigerian yam porridge.jpg" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>John Doe</h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/nigerian plantain Porridge 1.jpg" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>John Doe</h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/sandwich maker omelet sandwich maker recipes 1.jpg" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>John Doe</h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/Abak Mbakara Soup.JPG" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>John Doe</h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/Jollof Spaghetti Nigerian Spaghetti Jollof with vegetables 2.jpg"
+                                    alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>John Doe</h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/Nigerian Moi Moi _ How to Make Nigerian Moi Moi 1.JPG" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>John Doe</h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="Caterer 1" class="tabcontent">
+                <div class="row center-image">
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/Nigerian-Coconut-Jollof-rice-coconut-rice.png" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>Coconut Jollof</h1>
+                                <p>N500</p>
+                                <i onclick="toggleLike(this)" class="fa fa-thumbs-up" style="font-size: 2em"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/Nigerian-seafood-pepper-soup.png" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1></h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card column-4">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/asaro nigerian yam porridge.jpg" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>John Doe</h1>
+                                <p>Architect & Engineer</p>
+                                <p>We love that guy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Caterer 2" class="tabcontent">
+                <div class="flip-card column-4">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/nigerian plantain Porridge 1.jpg" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card column-4">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/sandwich maker omelet sandwich maker recipes 1.jpg" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card column-4">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/Abak Mbakara Soup.JPG" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Caterer 3" class="tabcontent">
+                <div class="flip-card column-4">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/Abak Mbakara Soup.JPG" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card column-4">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/Jollof Spaghetti Nigerian Spaghetti Jollof with vegetables 2.jpg"
+                                alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card column-4">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/Nigerian Moi Moi _ How to Make Nigerian Moi Moi 1.JPG" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Use any element to open/show the overlay navigation menu -->
+        <!-- <span onclick="openNav()">open</span> -->
+
+
+
+</body>
+<script src="./dashboard.js"></script>
+
+
+</html>

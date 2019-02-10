@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./manage-meal.css" />
+    <title>Manage Meal Options</title>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a class="active" onclick="openNav()"><i class="fa fa-fw fa-bars"></i> Menu</a>
+
+    </div>
+
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <div class="head">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+        <div id="user" class="user">
+            <div class="h3 username">Omobolanle</div>
+            <div class="h5 email">omobolanlearogundade@gmail.com</div>
+            <div class="avatar-container">
+                <!-- <img class="avatar"
+                    src="https://secure.gravatar.com/avatar/0d3552941f3b4cccd02cb1be35ce15ba.jpg?s=180&amp;d=https%3A%2F%2Fs3.amazonaws.com%2Fdrivendata%2Fimages%2Fgravatar-drivendata-default.png&amp;r=g"
+                    width="180" height="180" alt=""> -->
+                <img class="avatar" src="https://graph.facebook.com/1818524094849369/picture" width="180" height="180"
+                    alt="">
+                <!-- <img class="avatar" src="http://www.gravatar.com"> -->
+            </div>
+        </div>
+        <div class="navbar-content">
+            <div class="nav">
+                <div class="user-title">
+                    <span>Caterer</span>
+                </div>
+                <a class="nav-link" target="_self" href="../dashboard/dashboard-caterer.html">
+                    <div class="nav-link-icon" aria-hidden="true"></div>
+                    <span class="nav-link-title">Dashboard</span>
+                </a>
+                <!-- <a class="nav-link" target="_self" href="">
+                        <div class="nav-link-icon"aria-hidden="true"></div>
+                        <span class="nav-link-title ">Profile</span>
+                    </a> -->
+                <a class="nav-link active" target="_self" href="">
+                    <div class="nav-link-icon" aria-hidden="true"></div>
+                    <span class="nav-link-title active">Manage Meals</span>
+                </a>
+                <a class="nav-link" target="_self" href="../set-menu/set-menu.html">
+                        <div class="nav-link-icon" aria-hidden="true"></div>
+                        <span class="nav-link-title">Set Menu</span>
+                    </a>
+                <a class="nav-link" target="_self" href="../orders/orders.html">
+                    <div class="nav-link-icon" aria-hidden="true"></div>
+                    <span class="nav-link-title ">Orders</span>
+                </a>
+                <a class="nav-link" target="_self" href="../summary/summary.html">
+                    <div class="nav-link-icon" aria-hidden="true"></div>
+                    <span class="nav-link-title ">Summary</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAin content -->
+    <div id="main">
+        <h1>Manage Meals</h1>
+
+        <div class="head">
+            <button id="myBtn" class="btn">Add Meal</button>
+        </div>
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Add Meal Option</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <img src="../assets/Abak Mbakara Soup.JPG" alt="">
+                        <label for="image">Picture</label>
+                        <input name="image" type="file" accept="image/*">
+
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Meal name..">
+
+                        <label for="desciption">Description</label>
+                        <textarea name="desciption" id="desc" cols="30" rows="5"
+                            placeholder="Meal Description"></textarea>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="table">
+            <table style="overflow-y:auto;">
+                <thead>
+                    <tr>
+                        <th>#Id</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td> <img src="../assets/Jollof Spaghetti Nigerian Spaghetti Jollof with vegetables 2.jpg" /></td>
+                        <td>Jollof Spaghetti</td>
+                        <td>&#8358; 500</td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-edit"></i></a></td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-trash-alt"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td> <img src="../assets/Nigerian-Coconut-Jollof-rice-coconut-rice.png" /></td>
+                        <td>Cococunt Jollof</td>
+                        <td>&#8358; 700</td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-edit"></i></a></td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-trash-alt"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td> <img src="../assets/asaro nigerian yam porridge.jpg" /></td>
+                        <td>Porridge</td>
+                        <td>&#8358; 450</td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-edit"></i></a></td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-trash-alt"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td> <img src="../assets/nigerian plantain Porridge 1.jpg" /></td>
+                        <td>Plantain Porridge</td>
+                        <td>&#8358; 650</td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-edit"></i></a></td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-trash-alt"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td> <img src="../assets/sandwich maker omelet sandwich maker recipes 1.jpg" /></td>
+                        <td>Omelet Sandwich</td>
+                        <td>&#8358; 1050</td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-edit"></i></a></td>
+                        <td> <a class="" href="#"><i class="fas fa-2x fa-trash-alt"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a class="active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+</body>
+<script src="./manage-meal.js"></script>
+
+</html>
