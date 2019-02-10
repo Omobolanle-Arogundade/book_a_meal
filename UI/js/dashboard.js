@@ -21,7 +21,7 @@ function closeNav() {
 
 }
 
-function openCity(evt, cityName) {
+function openMeals(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
