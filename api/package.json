@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/Omobolanle-Arogundade/book_a_meal#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "sequelize": "^4.42.0"
   },
   "devDependencies": {
     "eslint": "^5.13.0",
