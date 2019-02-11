@@ -2,86 +2,88 @@
 
 Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat. This is an Andela Book-A-Meal web project challenge.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+**UI Template:**  https://omobolanle-arogundade.github.io/book_a_meal/UI/
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 
-## Contributing
+* [Node.js](https://nodejs.org/) - Node_.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+ * [Express](https://expressjs.com/) - Node.js web application framework. 
 
-## Versioning
+* [PostgreSQL](https://www.postgresql.org/) - is an object-relational database management system with an emphasis on extensibility and standards compliance Feeds
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-## Authors
+## Table of Content
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+ * [Getting Started](#getting-started)
+ * [Prerequisites](#prerequisites)
+ * [Features](#features)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+## Getting Started
+1. Clone the repository
+for SSH
+```sh
+git clone git@github.com:Omobolanle-Arogundade/book_a_meal.git
+```
+for HTTPS
+```sh
+git clone https://github.com/Omobolanle-Arogundade/book_a_meal.git
+```
 
-## Acknowledgments
+2. Install Dependencies
+```sh
+npm install
+```
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+## Prerequisites
+
+To get started you will need to install the following
+ 1. **Download and install Node**
+```sh
+https://nodejs.org/en/download/
+```
+
+ 2. **Download, install and configure PostgreSQL**
+ 
+
+for MAC OS X
+
+```
+https://www.postgresql.org/download/macosx/
+```
+for Windows
+```sh
+https://www.postgresql.org/download/windows/
+```
+
+3. **Download and Install TablePlus**
+```sh
+https://tableplus.io/
+```
+
+4.  **Download and Install Postman**
+```sh
+https://www.getpostman.com/apps
+```
+
+
+## Features
+- Users can create an account and log in
+    
+- Admin (Caterer) should be able to manage (i.e: add, modify and delete) meal options in the application. Examples of meal options are: Beef with rice, Beef with fries etc
+    
+- Admin (Caterer) should be able to setup menu for a specific day by selecting from the meal options available on the system.
+    
+- Authenticated users (customers) should be able to see the menu for a specific day and select an option out of the menu.
+    
+- Authenticated users (customers) should be able to change their meal choice.
+    
+- Admin (Caterer) should be able to see the orders made by the user
+    
+- Admin should be able to see amount of money made by end of day
+
+
