@@ -33,6 +33,8 @@ const MealService = {
     const newId = lastItemId + 1;
     meal.id = newId; // eslint-disable-line no-param-reassign
     dummyData.meals.push(meal);
+    console.log(dummyData.meals, 'all meals');
+    return dummyData.meals;
   },
 
   /**
@@ -42,7 +44,7 @@ const MealService = {
    * @param {*} id
    */
   getAMeal(id) {
-    const meal = dummyData.meals.find(meals => meals.id === id);
+    const meal = dummyData.meals.find(meals => meals.id === id || meals.id === parseInt(id, 10));
     return meal || {};
   },
 
