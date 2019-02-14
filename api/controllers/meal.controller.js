@@ -36,7 +36,7 @@ const MealController = {
   },
 
   /**
- * the fetchMeal method gets the id passed in the request header
+ * the fetchMeal method gets the id passed in the request params
  * and then uses the MealServices's getAMeal method to find the
  * meal with the provided index
  * @param {*} req
@@ -49,6 +49,22 @@ const MealController = {
       status: 'success',
       data: meal,
     }).status(200);
+  },
+
+  /**
+ * The deleteMeal method gets the id passed in the request params
+ * and then uses the MealService's deleteMeal method to find and
+ * delete the meal with the provided index
+ * @param {*} req
+ * @param {*} res
+ */
+  deleteMeal(req, res) {
+    const { id } = req.params;
+    const meal = MealService.deleteAMeal(id);
+    return res.json({
+      status: 'success',
+      data: meal,
+    }).status(202);
   },
 };
 

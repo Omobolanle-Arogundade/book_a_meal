@@ -11,5 +11,7 @@ router.post('/', MealController.addMeal);
 
 router.get('/:id', MealController.fetchMeal);
 
+router.delete('/:id', MealController.deleteMeal);
+
 
 export default router;
