@@ -52,8 +52,14 @@ const MealService = {
     return meal || 'meal does not exist';
   },
 
+  /**
+   * This method takes an id as the argument
+   * and then using the findIndex method, I find the index of the selected id in the array of meals
+   * then using the splice method, I removed the item at that index from the array
+   * and finally return the resulting Array
+   * @param {*} id
+   */
   deleteAMeal(id) {
-    // const removeMeal = this.getAMeal(id);
     // find index of item to delete
     const index = dummyData.meals.findIndex((meal) => {
       console.log(meal.id, parseInt(id, 10), meal.id === parseInt(id, 10));
