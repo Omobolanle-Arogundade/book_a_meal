@@ -61,11 +61,7 @@ const MealService = {
    */
   deleteAMeal(id) {
     // find index of item to delete
-    const index = dummyData.meals.findIndex((meal) => {
-      console.log(meal.id, parseInt(id, 10), meal.id === parseInt(id, 10));
-      return meal.id === id || meal.id === parseInt(id, 10);
-    });
-    console.log(index, 'index');
+    const index = dummyData.meals.findIndex(meal => meal.id === id || meal.id === parseInt(id, 10));
     if (typeof index === 'number' && index >= 0) {
       dummyData.meals.splice(index, 1);
     } else {
