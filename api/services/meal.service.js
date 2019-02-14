@@ -31,8 +31,13 @@ const MealService = {
     const mealLength = dummyData.meals.length;
     const lastItemId = dummyData.meals[mealLength - 1].id;
     const newId = lastItemId + 1;
-    meal.id = newId; // eslint-disable-line no-param-reassign
-    dummyData.meals.push(meal);
+    const newMeal = {
+      id: newId,
+      name: meal.name,
+      size: meal.size,
+      price: meal.price,
+    };
+    dummyData.meals.push(newMeal);
     return dummyData.meals;
   },
 
@@ -44,9 +49,24 @@ const MealService = {
    */
   getAMeal(id) {
     const meal = dummyData.meals.find(meals => meals.id === id || meals.id === parseInt(id, 10));
-    return meal || {};
+    return meal || 'meal does not exist';
+  },
+
+  deleteAMeal(id) {
+    // const removeMeal = this.getAMeal(id);
+    // find index of item to delete
+    const index = dummyData.meals.findIndex((meal) => {
+      console.log(meal.id, parseInt(id, 10), meal.id === parseInt(id, 10));
+      return meal.id === id || meal.id === parseInt(id, 10);
+    });
+    console.log(index, 'index');
+    if (typeof index === 'number' && index >= 0) {
+      dummyData.meals.splice(index, 1);
+    } else {
+      return 'Meal does not exist';
+    }
+    return dummyData.meals;
   },
 };
-
 
 export default MealService;

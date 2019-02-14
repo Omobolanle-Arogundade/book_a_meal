@@ -50,6 +50,16 @@ const MealController = {
       data: meal,
     }).status(200);
   },
+
+
+  deleteMeal(req, res) {
+    const { id } = req.params;
+    const meal = MealService.deleteAMeal(id);
+    return res.json({
+      status: 'success',
+      data: meal,
+    }).status(202);
+  },
 };
 
 export default MealController;
