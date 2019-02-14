@@ -1,3 +1,5 @@
+import { isObject } from 'util';
+
 import MealService from '../services/meal.service';
 
 
@@ -45,10 +47,18 @@ const MealController = {
   fetchMeal(req, res) {
     const { id } = req.params;
     const meal = MealService.getAMeal(id);
-    return res.json({
-      status: 'success',
-      data: meal,
-    }).status(200);
+    let response;
+    if (typeof meal === 'object' && isObject(meal)) {
+      response = res.json({
+        status: 'success',
+        data: meal,
+      }).status(200);
+    } else {
+      response = res.json({
+        status: 'Not Found',
+      }).status(404);
+    }
+    return response;
   },
 
   /**
@@ -61,10 +71,44 @@ const MealController = {
   deleteMeal(req, res) {
     const { id } = req.params;
     const meal = MealService.deleteAMeal(id);
-    return res.json({
-      status: 'success',
-      data: meal,
-    }).status(202);
+    let response;
+    if (typeof meal === 'object' && isObject(meal)) {
+      response = res.json({
+        status: 'success',
+        data: meal,
+      }).status(200);
+    } else {
+      response = res.json({
+        status: 'Not Found',
+      }).status(404);
+    }
+    return response;
+  },
+
+  /**
+ * The updateMeal method gets the id passed in the request params
+ * and the new value of the meal passes in the post bosy
+ * and then uses the MealService's updateMeal method to find and
+ * update the meal with the provided index and data
+ * @param {*} req
+ * @param {*} res
+ */
+  updateMeal(req, res) {
+    const { id } = req.params;
+    const mealValue = req.body;
+    const meal = MealService.updateMeal(id, mealValue);
+    let response;
+    if (typeof meal === 'object' && isObject(meal)) {
+      response = res.json({
+        status: 'success',
+        data: meal,
+      }).status(200);
+    } else {
+      response = res.json({
+        status: 'Not Found',
+      }).status(404);
+    }
+    return response;
   },
 };
 

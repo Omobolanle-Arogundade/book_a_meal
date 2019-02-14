@@ -69,6 +69,33 @@ const MealService = {
     }
     return dummyData.meals;
   },
+
+  /**
+   * This method takes an id as the argument
+   * and then using the findIndex method, I find the index of the selected id in the array of meals
+   * then using the splice method, I removed the item at that index from the array
+   * and and replace with the value of the newMeal to update the array
+   * and then I finally return the meals array
+   * @param {*} id: The id of the meal to update
+   * @param {*} meal: The new value of the meal ption after update
+   */
+  updateMeal(id, mealValue) {
+    // find the index of the item to update
+    // const newId = id;
+    const newMeal = {
+      id,
+      name: mealValue.name,
+      size: mealValue.size,
+      price: mealValue.price,
+    };
+    const index = dummyData.meals.findIndex(meal => meal.id === id || meal.id === parseInt(id, 10));
+    if (typeof index === 'number' && index >= 0) {
+      dummyData.meals.splice(index, 1, newMeal);
+    } else {
+      return 'Meal does not exist';
+    }
+    return dummyData.meals;
+  },
 };
 
 export default MealService;
