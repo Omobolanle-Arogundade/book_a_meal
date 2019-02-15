@@ -1,13 +1,25 @@
-const express = require('express');
+// Global dependencies
+import express from 'express';
+import bodyParser from 'body-parser';
 
-const app = express();
+// Custom dependencies
+// Routes
+import mealRoutes from './routes/meal.routes';
 
-app.get('', (req, res) => {
-  res.send('ci with travis');
+export const app = express();
+
+const PORT = 3100;
+
+app.use(bodyParser.json());
+
+app.get('', (req, res) => res.send('Hello World!!'));
+
+// Route handler
+app.use('/api/v1/meals', mealRoutes);
+
+
+export const server = app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}`);
 });
 
-const server = app.listen(3000, () => {
-  console.log('App running on port 3000');
-});
-
-module.exports = server;
+// export default app;
