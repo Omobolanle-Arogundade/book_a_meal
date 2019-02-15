@@ -4,7 +4,7 @@ class Meals {
     this.name = name;
     this.size = size;
     this.price = price;
-    // this.currency = null;
+    // this.imageUrl = imageUrl;
   }
 }
 
