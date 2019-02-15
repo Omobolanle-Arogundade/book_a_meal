@@ -12,7 +12,7 @@ const PORT = 3100;
 
 app.use(bodyParser.json());
 
-app.get('', (req, res) => res.send('ci with travis'));
+app.get('', (req, res) => res.send('Hello World!!'));
 
 // Route handler
 app.use('/api/v1/meals', mealRoutes);
