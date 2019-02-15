@@ -1,9 +1,11 @@
 language: node_js
 node_js: 
   - "stable"
+
+before_script: cd api
 cache:
 directories:
-    - "api/node_modules"
+    - "node_modules"
 install:
   - npm install
 
