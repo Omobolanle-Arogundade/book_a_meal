@@ -31,12 +31,11 @@ const MealService = {
     const mealLength = dummyData.meals.length;
     const lastItemId = dummyData.meals[mealLength - 1].id;
     const newId = lastItemId + 1;
-    const newMeal = {
-      id: newId,
-      name: meal.name,
-      size: meal.size,
-      price: meal.price,
-    };
+    const newMeal = new Meals();
+    newMeal.id = newId;
+    newMeal.name = meal.name;
+    newMeal.size = meal.size;
+    newMeal.price = meal.price;
     dummyData.meals.push(newMeal);
     return dummyData.meals;
   },

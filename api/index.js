@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 // Custom dependencies
 // Routes
 import mealRoutes from './routes/meal.routes';
+import menuRoutes from './routes/menu.routes';
 
 const app = express();
 
@@ -14,8 +15,9 @@ app.use(bodyParser.json());
 
 app.get('', (req, res) => res.send('ci with travis'));
 
-// Route handler
+// Route handlers
 app.use('/api/v1/meals', mealRoutes);
+app.use('/api/v1/menu', menuRoutes);
 
 
 const server = app.listen(PORT, () => {
