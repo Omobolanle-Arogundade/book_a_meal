@@ -1,6 +1,6 @@
-const request = require('supertest');
+import request from 'supertest';
 
-const { app } = require('../index');
+import { app } from '../index';
 
 describe('API test', () => {
   it('should return Hello World!!', (done) => {

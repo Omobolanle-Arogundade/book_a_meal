@@ -15,10 +15,12 @@ const MealController = {
  */
   fetchAllMeals(req, res) {
     const allMeals = MealService.fetchAllMeals();
-    return res.json({
-      status: 'success',
-      data: allMeals,
-    }).status(200);
+    return res
+      .status(200)
+      .json({
+        status: 'success',
+        data: allMeals,
+      });
   },
 
   /**
@@ -29,12 +31,17 @@ const MealController = {
    * @param res
    */
   addMeal(req, res) {
-    const newMeal = req.body;
+    const newMeal = {
+      name: req.body.name,
+      size: req.body.size,
+      price: req.body.price,
+    };
     const addedMeal = MealService.addMeal(newMeal);
+    res.status(201);
     return res.json({
       status: 'successfully added Meal',
       data: addedMeal,
-    }).status(201);
+    });
   },
 
   /**
@@ -49,14 +56,14 @@ const MealController = {
     const meal = MealService.getAMeal(id);
     let response;
     if (typeof meal === 'object' && isObject(meal)) {
+      res.status(200);
       response = res.json({
         status: 'success',
         data: meal,
-      }).status(200);
+      });
     } else {
-      response = res.json({
-        status: 'Not Found',
-      }).status(404);
+      res.status(204);
+      response = res.send({});
     }
     return response;
   },
@@ -73,14 +80,14 @@ const MealController = {
     const meal = MealService.deleteAMeal(id);
     let response;
     if (typeof meal === 'object' && isObject(meal)) {
+      res.status(202);
       response = res.json({
         status: 'success',
         data: meal,
-      }).status(200);
+      });
     } else {
-      response = res.json({
-        status: 'Not Found',
-      }).status(404);
+      res.status(204);
+      response = res.send({});
     }
     return response;
   },
@@ -98,15 +105,16 @@ const MealController = {
     const mealValue = req.body;
     const meal = MealService.updateMeal(id, mealValue);
     let response;
+    console.log(meal, 'return from updateMeal method');
     if (typeof meal === 'object' && isObject(meal)) {
+      res.status(202);
       response = res.json({
         status: 'success',
         data: meal,
-      }).status(200);
+      });
     } else {
-      response = res.json({
-        status: 'Not Found',
-      }).status(404);
+      res.status(204);
+      response = res.send({});
     }
     return response;
   },

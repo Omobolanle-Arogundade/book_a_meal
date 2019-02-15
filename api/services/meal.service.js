@@ -9,11 +9,7 @@ const MealService = {
   fetchAllMeals() {
     const standardMeals = dummyData.meals.map((meal) => {
       // When we retrieve the meals, we want to make sure it is of type Meals
-      const modelledMeal = new Meals();
-      modelledMeal.id = meal.id;
-      modelledMeal.name = meal.name;
-      modelledMeal.size = meal.size;
-      modelledMeal.price = meal.price;
+      const modelledMeal = new Meals(meal.id, meal.name, meal.size, meal.price);
       return modelledMeal;
     });
 
@@ -31,12 +27,7 @@ const MealService = {
     const mealLength = dummyData.meals.length;
     const lastItemId = dummyData.meals[mealLength - 1].id;
     const newId = lastItemId + 1;
-    const newMeal = {
-      id: newId,
-      name: meal.name,
-      size: meal.size,
-      price: meal.price,
-    };
+    const newMeal = new Meals(newId, meal.name, meal.size, meal.price);
     dummyData.meals.push(newMeal);
     return dummyData.meals;
   },
@@ -49,7 +40,11 @@ const MealService = {
    */
   getAMeal(id) {
     const meal = dummyData.meals.find(meals => meals.id === id || meals.id === parseInt(id, 10));
-    return meal || 'meal does not exist';
+    if (meal) {
+      const modelledMeal = new Meals(meal.id, meal.name, meal.size, meal.price);
+      return modelledMeal;
+    }
+    return 'meal does not exist';
   },
 
   /**
@@ -81,13 +76,7 @@ const MealService = {
    */
   updateMeal(id, mealValue) {
     // find the index of the item to update
-    // const newId = id;
-    const newMeal = {
-      id,
-      name: mealValue.name,
-      size: mealValue.size,
-      price: mealValue.price,
-    };
+    const newMeal = new Meals(id, mealValue.name, mealValue.size, mealValue.price);
     const index = dummyData.meals.findIndex(meal => meal.id === id || meal.id === parseInt(id, 10));
     if (typeof index === 'number' && index >= 0) {
       dummyData.meals.splice(index, 1, newMeal);

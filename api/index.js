@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 // Routes
 import mealRoutes from './routes/meal.routes';
 
-const app = express();
+export const app = express();
 
 const PORT = 3100;
 
@@ -18,11 +18,8 @@ app.get('', (req, res) => res.send('Hello World!!'));
 app.use('/api/v1/meals', mealRoutes);
 
 
-const server = app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
 });
 
-module.exports = {
-  app,
-  server,
-};
+// export default app;
