@@ -105,7 +105,6 @@ const MealController = {
     const mealValue = req.body;
     const meal = MealService.updateMeal(id, mealValue);
     let response;
-    console.log(meal, 'return from updateMeal method');
     if (typeof meal === 'object' && isObject(meal)) {
       res.status(202);
       response = res.json({
