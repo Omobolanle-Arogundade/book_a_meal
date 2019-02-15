@@ -1,8 +1,8 @@
 class Menus {
-  constructor() {
-    this.id = null;
-    this.date = null;
-    this.meals = [];
+  constructor(id, date, mealsId) {
+    this.id = id;
+    this.date = date;
+    this.mealsId = mealsId;
   }
 }
 

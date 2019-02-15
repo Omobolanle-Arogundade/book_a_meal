@@ -30,7 +30,7 @@ export default {
     {
       id: 1,
       date: '10-02-2019',
-      meals: [
+      mealsId: [
         1,
         2,
         3,
@@ -42,7 +42,7 @@ export default {
     {
       id: 2,
       date: '11-02-2019',
-      meals: [
+      mealsId: [
         1,
         2,
         3,
@@ -54,7 +54,7 @@ export default {
     {
       id: 3,
       date: '12-02-2019',
-      meals: [
+      mealsId: [
         1,
         2,
         3,
@@ -66,7 +66,7 @@ export default {
     {
       id: 4,
       date: '12-02-2019',
-      meals: [
+      mealsId: [
         1,
         2,
         3,

@@ -2,7 +2,6 @@ import { isObject } from 'util';
 
 import MealService from '../services/meal.service';
 
-
 const MealController = {
 
 
