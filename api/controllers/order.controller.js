@@ -21,7 +21,7 @@ const OrderController = {
     });
   },
 
-  updateMeal(req, res) {
+  updateOrder(req, res) {
     const { id } = req.params;
     const orderValue = req.body;
     const order = OrderService.updateOrder(id, orderValue);

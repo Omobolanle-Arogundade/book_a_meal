@@ -8,6 +8,6 @@ router.get('/', OrderController.fetchOrders);
 
 router.post('/', OrderController.addOrder);
 
-router.put('/:id', OrderController.updateMeal);
+router.put('/:id', OrderController.updateOrder);
 
 export default router;
