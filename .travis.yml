@@ -7,7 +7,7 @@ env:
 
 before_script:
   - cd api
-  - chmod 0755 /node_modules/.bin/mocha
+  - chmod 0755 node_modules/.bin/mocha
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
