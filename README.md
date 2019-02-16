@@ -1,11 +1,6 @@
-[![Build Status](https://travis-ci.com/Omobolanle-Arogundade/book_a_meal.svg?branch=master)](https://travis-ci.com/Omobolanle-Arogundade/book_a_meal)
 
-[![Coverage Status](https://coveralls.io/repos/github/Omobolanle-Arogundade/book_a_meal/badge.svg)](https://coveralls.io/github/Omobolanle-Arogundade/book_a_meal)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 # Book A Meal
+[![Build Status](https://travis-ci.com/Omobolanle-Arogundade/book_a_meal.svg?branch=master)](https://travis-ci.com/Omobolanle-Arogundade/book_a_meal) [![Coverage Status](https://coveralls.io/repos/github/Omobolanle-Arogundade/book_a_meal/badge.svg)](https://coveralls.io/github/Omobolanle-Arogundade/book_a_meal) [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat. This is an Andela Book-A-Meal web project challenge.
 
