@@ -14,9 +14,12 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementsByClassName("topnav")[0].style.backgroundColor = "#4285F4";
-  } else {
-    document.getElementsByClassName("topnav")[0].style.backgroundColor = "transparent";
+    document.getElementsByClassName("topnav")[0].style.backgroundColor = "grey";
+  } 
+  else {
+    if(window.innerWidth > 601){
+      document.getElementsByClassName("topnav")[0].style.backgroundColor = "transparent";
+    }
   }
 }
 
