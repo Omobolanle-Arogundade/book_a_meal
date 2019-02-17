@@ -1,0 +1,14 @@
+{
+  "date": "15/12/2019",
+  "customerId": "55",
+  "meals": [
+    {
+      "meal_id": "1",
+      "meal_quantity": "6"
+    },
+    {
+      "meal_id": "3",
+      "meal_quantity": "10"
+    }
+  ]
+}

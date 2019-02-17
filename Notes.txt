@@ -1,0 +1,3 @@
+This is a note to keep track of all the issues I had with this project, sadly I've had a few over time I didn't document before now
+**Mocha => Warning: Could not find any test files matching pattern: test **
+Fix:

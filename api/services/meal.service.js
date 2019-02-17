@@ -66,17 +66,17 @@ const MealService = {
   },
 
   /**
-   * This method takes an id as the argument
+   * This method takes an id mealValue as its arguments
    * and then using the findIndex method, I find the index of the selected id in the array of meals
    * then using the splice method, I removed the item at that index from the array
    * and and replace with the value of the newMeal to update the array
    * and then I finally return the meals array
    * @param {*} id: The id of the meal to update
-   * @param {*} meal: The new value of the meal ption after update
+   * @param {*} mealValue: The new value of the meal ption after update
    */
   updateMeal(id, mealValue) {
     // find the index of the item to update
-    const newMeal = new Meals(id, mealValue.name, mealValue.size, mealValue.price);
+    const newMeal = new Meals(parseInt(id, 10), mealValue.name, mealValue.size, mealValue.price);
     const index = dummyData.meals.findIndex(meal => meal.id === id || meal.id === parseInt(id, 10));
     if (typeof index === 'number' && index >= 0) {
       dummyData.meals.splice(index, 1, newMeal);

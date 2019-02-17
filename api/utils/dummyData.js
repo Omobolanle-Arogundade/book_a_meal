@@ -76,4 +76,66 @@ export default {
       ],
     },
   ],
+  orders: [
+    {
+      id: 1,
+      date: '15-02-2019',
+      customerId: '2',
+      meals: [
+        {
+          meal_id: '1',
+          meal_quantity: '2',
+        },
+        {
+          meal_id: '3',
+          meal_quantity: '1',
+        },
+      ],
+    },
+    {
+      id: 2,
+      date: '16-02-2019',
+      customerId: '4',
+      meals: [
+        {
+          meal_id: '1',
+          meal_quantity: '2',
+        },
+        {
+          meal_id: '5',
+          meal_quantity: '1',
+        },
+      ],
+    },
+    {
+      id: 3,
+      date: '16-02-2019',
+      customerId: '7',
+      meals: [
+        {
+          meal_id: '6',
+          meal_quantity: '2',
+        },
+        {
+          meal_id: '3',
+          meal_quantity: '1',
+        },
+      ],
+    },
+    {
+      id: 4,
+      date: '17-02-2019',
+      customerId: '4',
+      meals: [
+        {
+          meal_id: '5',
+          meal_quantity: '1',
+        },
+        {
+          meal_id: '3',
+          meal_quantity: '1',
+        },
+      ],
+    },
+  ],
 };
