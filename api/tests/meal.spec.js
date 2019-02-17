@@ -105,7 +105,7 @@ describe('Meal API\'s test', () => {
   // tests for update a meal API
   */
   describe('Update Meals API', () => {
-    // test to see if we get a status: 202, when we delete a meal
+    // test to see if we get a status: 202, when we update a meal
     it('should update a meal by id', (done) => {
       request(app)
         .put('/api/v1/meals/3')
@@ -114,7 +114,7 @@ describe('Meal API\'s test', () => {
         .end(done);
     });
 
-    // test if we get a status: 204 when the delete id doesn't exist
+    // test if we get a status: 204 when the update id doesn't exist
     it('should return a 204 if meal id doesn\'t exist', (done) => {
       request(app)
         .put('/api/v1/meals/50')

@@ -2,7 +2,6 @@ import { isObject } from 'util';
 
 import MealService from '../services/meal.service';
 
-
 const MealController = {
 
 
@@ -31,11 +30,7 @@ const MealController = {
    * @param res
    */
   addMeal(req, res) {
-    const newMeal = {
-      name: req.body.name,
-      size: req.body.size,
-      price: req.body.price,
-    };
+    const newMeal = req.body;
     const addedMeal = MealService.addMeal(newMeal);
     res.status(201);
     return res.json({
