@@ -23,7 +23,7 @@ function closeNav() {
 
 window.onload = typeWriter;
 var i = 0;
-var txt = 'Hurray!! Your meal is on the way...'; /* The text */
+var txt = 'Hurray!! Your meal is on it\'s way...'; /* The text */
 var speed = 50; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {
