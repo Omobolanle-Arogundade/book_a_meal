@@ -4,7 +4,9 @@
 
 Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat. This is an Andela Book-A-Meal web project challenge.
 
-**UI Template:**  https://omobolanle-arogundade.github.io/book_a_meal/UI/
+**UI Template:**  https://omobolanle-arogundade.github.io/book_a_meal/UI
+
+**API url** https://bookameal.herokuapp.com
 
 ## Built With
 
