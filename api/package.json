@@ -24,9 +24,10 @@
   "homepage": "https://github.com/Omobolanle-Arogundade/book_a_meal#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "expect": "^1.20.2",
     "express": "^4.16.4",
-    "sequelize": "^4.42.0",
-    "expect": "^1.20.2"
+    "nodemon": "^1.18.10",
+    "sequelize": "^4.42.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
