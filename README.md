@@ -6,6 +6,8 @@ Book-A-Meal is an application that allows customers to make food orders and help
 
 **UI Template:**  https://omobolanle-arogundade.github.io/book_a_meal/UI/
 
+**API url** https://bookameal.herokuapp.com
+
 ## Built With
 
 * [React](https://reactjs.org/) - A JavaScript library for building user interfaces
