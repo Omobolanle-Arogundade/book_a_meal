@@ -274,7 +274,7 @@
     opacity: 0.8;
     margin: 20px 20px 10px;
     border-radius: 80px;
-    float: right
+    /* float: right */
   }
   
   .btn:hover {
