@@ -1,5 +1,7 @@
 # Book A Meal
 
+[![Build Status](https://travis-ci.com/Omobolanle-Arogundade/book_a_meal.svg?branch=master)](https://travis-ci.com/Omobolanle-Arogundade/book_a_meal)
+
 Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat. This is an Andela Book-A-Meal web project challenge.
 
 **UI Template:**  https://omobolanle-arogundade.github.io/book_a_meal/UI/
