@@ -24,3 +24,7 @@ cache:
 directories:
     - "api/node_modules"
 
+# First, if you are using Travis CI , make sure it's building correctly. If you're using Travis Pro, add the following lines to a .coveralls.yml file in your repository's root:
+service_name: travis-pro
+repo_token: oMPWp3QQojGyAVkC7hRYVhI485RrTMI8d
+
