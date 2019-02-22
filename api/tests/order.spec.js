@@ -55,7 +55,7 @@ describe('Order API\'s test', () => {
   */
   describe('Update Orders API', () => {
     // test to see if we get a status: 202, when we update an order
-    it('should update a meal by id', (done) => {
+    it('should update a order by id', (done) => {
       request(app)
         .put('/api/v1/orders/3')
         .send(order)
@@ -64,7 +64,7 @@ describe('Order API\'s test', () => {
     });
 
     // test if we get a status: 204 when the update id doesn't exist
-    it('should return a 204 if meal id doesn\'t exist', (done) => {
+    it('should return a 204 if order id doesn\'t exist', (done) => {
       request(app)
         .put('/api/v1/orders/50')
         .send(order)
