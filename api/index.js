@@ -12,9 +12,14 @@ export const app = express();
 
 const PORT = process.env.PORT || 8000;
 
+// Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('', (req, res) => res.send('Hello World!!'));
+// Setup a default catch-all route that sends back a welcome message in JSON format.
+app.get('*', (req, res) => res.status(200).send({
+  message: 'Welcome to Book a Meal API',
+}));
 
 // Route handlers
 app.use('/api/v1/meals', mealRoutes);
