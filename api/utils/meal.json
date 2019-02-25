@@ -2,5 +2,7 @@
   "name": "eba and egusi",
   "description": "here is some story about the meal",
   "size": "medium",
-  "price": "600"
+  "price": "600",
+  "catererId": 2,
+  "image": "abc.xyz"
 }

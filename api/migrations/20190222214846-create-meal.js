@@ -18,12 +18,16 @@ module.exports = {
       allowNull: false,
       type: Sequelize.STRING,
     },
-    image_url: {
+    catererId: {
       allowNull: false,
+      type: Sequelize.INTEGER,
+    },
+    imageUrl: {
+      allowNull: true,
       type: Sequelize.STRING,
     },
     size: {
-      allowNull: false,
+      allowNull: true,
       type: Sequelize.STRING,
     },
     createdAt: {
