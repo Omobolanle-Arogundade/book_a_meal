@@ -41,8 +41,8 @@ describe('Meal API\'s test', () => {
           expect(res.body)
             .toBeA('object');
           expect(res.body.meal)
-            .toBeA('object')
-            // .toIncludeKeys(['id', 'name', 'size', 'price']);
+            .toBeA('object');
+          // .toIncludeKeys(['id', 'name', 'size', 'price']);
         })
         .end(done);
     });
