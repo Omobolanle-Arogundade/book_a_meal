@@ -4,11 +4,9 @@ node_js:
 env:
   global:
     - CC_TEST_REPORTER_ID=506d4ee84b11bfa9898dfb7f3732667af17db4dcd27337f117fb4d05188dcded
-services:
-  - postgresql
-  cache:
-directories:
-    - "api/node_modules"
+# services:
+#   - postgresql
+
 
 before_script:
   - cd api
@@ -20,9 +18,9 @@ before_script:
   - ./cc-test-reporter before-build
   # Postgres before_script
   # - cat .env.travis >> .env
-  - psql -c "DROP DATABASE travis;" -U postgres
-  - psql -c "CREATE DATABASE travis;" -U postgres
-  - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
+  # - psql -c "DROP DATABASE travis;" -U postgres
+  # - psql -c "CREATE DATABASE travis;" -U postgres
+  # - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
 script:  
   - npm run test
 after_script:
@@ -33,3 +31,6 @@ after_script:
 
 
 
+cache:
+directories:
+    - "api/node_modules"
