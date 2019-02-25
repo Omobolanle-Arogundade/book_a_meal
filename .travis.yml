@@ -16,8 +16,6 @@ before_script:
   - psql -c "DROP DATABASE travis;" -U postgres
   - psql -c "CREATE DATABASE travis;" -U postgres
   - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
-  - sequelize db:migrate
-
 
   - chmod 0755 node_modules/.bin/mocha
   # CODE CLIMATE BEFORE_SCRIPT
