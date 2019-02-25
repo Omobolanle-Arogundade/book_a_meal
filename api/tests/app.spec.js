@@ -6,7 +6,7 @@ describe('API test', () => {
   it('should return Hello World!!', (done) => {
     request(app)
       .get('/')
-      .expect('Hello World!!')
+      .expect('Welcome to Book-A-Meal API...')
       .end(done);
   });
 });
