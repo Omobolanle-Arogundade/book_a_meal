@@ -11,11 +11,14 @@ services:
 before_script:
   # Postgres before_script
   - cat .env.travis >> .env
+  - cd api
+  - npm install
   - psql -c "DROP DATABASE travis;" -U postgres
   - psql -c "CREATE DATABASE travis;" -U postgres
   - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
-  - cd api
-  - npm install
+  - sequelize db:migrate
+
+
   - chmod 0755 node_modules/.bin/mocha
   # CODE CLIMATE BEFORE_SCRIPT
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
