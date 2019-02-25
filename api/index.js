@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 
-app.get('', (req, res) => res.send('Hello World!!'));
+app.get('', (req, res) => res.send('Welcome to Book-A-Meal API...'));
 
 // Route handlers
 app.use('/api/v1/meals', mealRoutes);
