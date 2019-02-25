@@ -9,7 +9,6 @@ export default class mealsController {
     } = req.body;
     // const { image } = req.files;
     const imageUrl = `/api/images/${image}`;
-    console.log(Meal, 'the meal');
     Meal
       .create({
         name,

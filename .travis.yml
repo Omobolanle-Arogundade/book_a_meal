@@ -4,6 +4,11 @@ node_js:
 env:
   global:
     - CC_TEST_REPORTER_ID=506d4ee84b11bfa9898dfb7f3732667af17db4dcd27337f117fb4d05188dcded
+services:
+  - postgresql
+  cache:
+directories:
+    - "api/node_modules"
 
 before_script:
   - cd api
@@ -13,6 +18,11 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  # Postgres before_script
+  - cat .env.travis >> .env
+  - psql -c "DROP DATABASE travis;" -U postgres
+  - psql -c "CREATE DATABASE travis;" -U postgres
+  - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
 script:  
   - npm run test
 after_script:
@@ -20,8 +30,6 @@ after_script:
   - npm run coverage
     # CODE CLIMATE AFTER_SCRIPT
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-cache:
-directories:
-    - "api/node_modules"
+
 
 
