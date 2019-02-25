@@ -1,20 +1,32 @@
-import db from '../models';
-const Meal = db.Meal;
+import Meal from '../models/meal';
 
 export default class mealsController {
   static addMeal(req, res) {
-    return Meal
+    const {
+      name, description, price, size, catererId,
+    } = req.body;
+    const { image } = req.files;
+    const imageUrl = `/api/images/${image.name}`;
+    // image.mv(`${imageUrl}`, (err) => {
+    //   if (err) {
+    //     return res.status(500).send(err);
+    //   }
+
+    //   return res.send('File uploaded!');
+    // });
+    Meal
       .create({
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        image_url: req.body.image_url,
-        size: req.body.size,
+        name,
+        description,
+        price,
+        size,
+        catererId,
+        imageUrl,
       })
       .then((meal) => {
         res.status(201);
         res.json({
-          message: 'Added meal successfully',
+          message: 'Added meal option successfully',
           meal,
         });
       })
