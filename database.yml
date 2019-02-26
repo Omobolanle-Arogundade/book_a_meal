@@ -1,7 +1,0 @@
-test:
-  adapter: postgresql
-  database: travis_ci_test
-  username: "bincom",
-  password: null,
-  host: "127.0.0.1",
-  port: 5432,
