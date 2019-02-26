@@ -20,7 +20,6 @@ const PORT = process.env.PORT || 3100;
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(bodyParser.json());
 
-app.get('', (req, res) => res.send('Welcome to Book-A-Meal API...'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Route handlers
