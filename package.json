@@ -4,8 +4,8 @@
   "description": "Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js",
-    "test": "mocha ../api/tests/**.spec.js --recursive --require @babel/register --timeout 10000 --exit",
+    "start": "nodemon --exec babel-node api/index.js",
+    "test": "mocha ./api/tests/**.spec.js --recursive --require @babel/register --timeout 10000 --exit",
     "test-watch": "nodemon --exec \"npm test\"",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
