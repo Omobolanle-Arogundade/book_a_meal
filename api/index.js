@@ -1,12 +1,17 @@
 // Global dependencies
 import express from 'express';
 import bodyParser from 'body-parser';
+import config from 'dotenv';
+
 
 // Custom dependencies
 // Routes
 import mealRoutes from './routes/meal.routes';
 // import menuRoutes from './routes/menu.routes';
 // import orderRoutes from './routes/order.routes';
+
+
+config.config();
 
 export const app = express();
 
