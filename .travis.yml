@@ -19,7 +19,7 @@ before_script:
   - cd api
   - sequelize db:migrate
   # - sequelize db:seed:all
-
+  - cd ../
 
   - chmod 0755 node_modules/.bin/mocha
   # CODE CLIMATE BEFORE_SCRIPT
