@@ -11,8 +11,9 @@ services:
 before_script:
   # Postgres before_script
   - npm install
+  - cat .env.travis >> .env
   - psql -c "DROP DATABASE travis;" -U postgres
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c "CREATE DATABASE travis;" -U postgres
   - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
 
   - chmod 0755 node_modules/.bin/mocha
