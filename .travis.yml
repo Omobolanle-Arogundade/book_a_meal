@@ -14,7 +14,6 @@ services:
 before_script:
   # Postgres before_script
   - npm install
-  - cat .env.travis >> .env
   - psql -c 'create database book_a_meal;' -U postgres
   - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
   - npm run build
