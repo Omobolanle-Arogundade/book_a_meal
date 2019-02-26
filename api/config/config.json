@@ -1,15 +1,15 @@
 {
   "development": {
-    "username": "bincom",
-    "password": null,
+    "username": "tester",
+    "password": "password",
     "database": "book_a_meal",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
   },
   "test": {
-    "username": "bincom",
-    "password": null,
+    "username": "tester",
+    "password": "password",
     "database": "book_a_meal",
     "host": "127.0.0.1",
     "port": 5432,
