@@ -11,7 +11,6 @@ services:
 before_script:
   # Postgres before_script
   - cat .env.travis >> .env
-  - cd api
   - npm install
   - psql -c "DROP DATABASE travis;" -U postgres
   - psql -c "CREATE DATABASE travis;" -U postgres
@@ -35,4 +34,4 @@ after_script:
 
 cache:
 directories:
-    - "api/node_modules"
+    - "node_modules"
