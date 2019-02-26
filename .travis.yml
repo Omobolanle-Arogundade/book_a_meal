@@ -11,7 +11,6 @@ services:
 before_script:
   # Postgres before_script
   - npm install
-  - cp database.yml config/database.yml
   - psql -c "DROP DATABASE travis;" -U postgres
   - psql -c 'create database travis_ci_test;' -U postgres
   - psql -c "CREATE USER root WITH PASSWORD 'password';" -U postgres
