@@ -2,6 +2,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import config from 'dotenv';
+import cors from 'cors';
 
 
 // Custom dependencies
@@ -21,6 +22,8 @@ const PORT = process.env.PORT || 3100;
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(cors());
 
 // Route handlers
 app.use('/api/v1/meals', mealRoutes);
