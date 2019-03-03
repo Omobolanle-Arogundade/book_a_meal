@@ -10,10 +10,11 @@ class userValidator {
   static async validateSignUp(req, res, next) {
     try {
       const schema = {
-        name: Joi.string().required(),
-        email: Joi.string().email().required(),
-        phone: Joi.number().min(11).required(),
-        password: Joi.string().min(8).required(),
+        user_firstName: Joi.string().required(),
+        user_lastName: Joi.string().required(),
+        user_email: Joi.string().email().required(),
+        user_phoneNo: Joi.string().min(11).required(),
+        user_password: Joi.string().min(8).required(),
       };
       await Joi.validate(req.body, schema);
       next();
