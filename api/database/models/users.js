@@ -58,6 +58,11 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: [],
       allowNull: true,
     },
+    role_id: {
+      type: DataTypes.STRING,
+      defaultValue: 3,
+      allowNull: true,
+    },
     deleted: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
