@@ -1,3 +1,12 @@
 This is a note to keep track of all the issues I had with this project, sadly I've had a few over time I didn't document before now
 **Mocha => Warning: Could not find any test files matching pattern: test **
 Fix:
+
+
+ft-environment-setup
+1. create .sequelizerc file
+2. Run sequelize init
+3. Rewrite index.js file generated to taste
+4. Configure the config.js file to use env variables
+5. run sequelize model:generate --name Role --attributes name:string,description:string,permissions:array
+ // to create the Role model
