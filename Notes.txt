@@ -9,4 +9,4 @@ ft-environment-setup
 3. Rewrite index.js file generated to taste
 4. Configure the config.js file to use env variables
 5. run sequelize model:generate --name Role --attributes name:string,description:string,permissions:array
- // to create the Role model
+ // to create the Role models
