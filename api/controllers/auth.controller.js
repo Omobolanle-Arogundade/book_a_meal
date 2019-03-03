@@ -1,6 +1,8 @@
 import db from '../database/models';
 import hashPassword from '../services/hash-password';
 
+import 'babel-polyfill';
+
 const { Users } = db;
 
 export default class AuthController {
