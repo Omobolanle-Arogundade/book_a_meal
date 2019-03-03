@@ -8,7 +8,8 @@
     "test": "mocha ./api/tests/**.spec.js --recursive --require @babel/register --timeout 10000 --exit",
     "test-watch": "nodemon --exec \"npm test\"",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "sequelize": "./node_modules/.bin/babel-node ./node_modules/.bin/sequelize $*"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,9 @@
     "nyc": "^13.3.0",
     "pg": "^7.8.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.42.0"
+    "sequelize": "^4.43.0",
+    "sequelize-cli": "^5.4.0",
+    "trim-request": "^1.0.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

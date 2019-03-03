@@ -22,7 +22,7 @@ module.exports = {
       type: Sequelize.STRING,
     },
     user_permissions: {
-      type: Sequelize.ARRAY(Sequelize.INTEGER),
+      type: Sequelize.ARRAY(Sequelize.STRING),
       allowNull: true,
       defaultValue: [],
     },

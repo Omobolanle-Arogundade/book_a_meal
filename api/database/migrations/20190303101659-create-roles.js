@@ -13,7 +13,7 @@ module.exports = {
       type: Sequelize.STRING,
     },
     role_permissions: {
-      type: Sequelize.ARRAY(Sequelize.INTEGER),
+      type: Sequelize.ARRAY(Sequelize.STRING),
     },
     createdAt: {
       allowNull: false,

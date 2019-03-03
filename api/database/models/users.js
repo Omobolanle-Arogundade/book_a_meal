@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     user_permissions: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      type: DataTypes.ARRAY(DataTypes.STRING),
       defaultValue: [],
       allowNull: true,
     },
@@ -66,15 +66,15 @@ module.exports = (sequelize, DataTypes) => {
   });
   Users.associate = (models) => {
     // associations can be defined here
-    Users.belongsTo(models.Role, {
+    Users.belongsTo(models.Roles, {
       foreignKey: 'role_id',
       as: 'Role',
     });
 
-    Users.hasMany(models.Order, {
-      foreignKey: 'user_id',
-      as: 'Orders',
-    });
+    // Users.hasMany(models.Orders, {
+    //   foreignKey: 'user_id',
+    //   as: 'Orders',
+    // });
   };
   return Users;
 };

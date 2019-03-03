@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     role_permissions: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      type: DataTypes.ARRAY(DataTypes.STRING),
       defaultValue: [],
       allowNull: {
         args: true,
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Roles.associate = (models) => {
     // associations can be defined here
-    Roles.hasMany(models.User, {
+    Roles.hasMany(models.Users, {
       foreignKey: 'role_id',
       as: 'Users',
     });
