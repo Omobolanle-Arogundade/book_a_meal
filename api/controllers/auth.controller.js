@@ -4,6 +4,8 @@ import hashPassword from '../services/hash-password';
 import 'idempotent-babel-polyfill';
 import comparePassword from '../services/compare-password';
 import Token from '../services/token';
+import permission from '../config/permissions';
+
 
 const { Users } = db;
 
@@ -18,7 +20,28 @@ export default class AuthController {
     try {
     /*eslint-disable */
       // set default value for role_od
-      const role_id = req.role_id ? req.role_id : 3;
+      console.log(req.body.role_id, 'role id');
+      const role_id = req.body.role_id ? req.body.role_id : 3;
+      let permissions;
+
+      if (role_id === 2) {
+        permissions = [
+          permission[1],
+          permission[3],
+          permission[4],
+          permission[5],
+          permission[6],
+          permission[8],
+        ]
+      } else if (role_id === 3) {
+         permissions = [
+          permission[1],
+          permission[4],
+          permission[6],
+          permission[7],
+          permission[8],
+        ]
+      }
       const {
         firstName,
         lastName,
@@ -28,13 +51,14 @@ export default class AuthController {
       } = req.body;
    /* eslint-enable */
 
+
       const findUser = await Users.findOne({ where: { email } });
 
       if (!findUser) {
         // hash user password
         const hashedPassword = hashPassword(password);
         const user = await Users.create({
-          firstName, lastName, email, phoneNo, password: hashedPassword, role_id,
+          firstName, lastName, email, phoneNo, password: hashedPassword, role_id, permissions,
         });
         return res.status(201).json({
           status: 'success',
@@ -90,7 +114,7 @@ export default class AuthController {
         });
       }
     } catch (err) {
-      return res.status(500).json({
+      return res.status(400).json({
         status: 'error',
         message: err.message,
       });

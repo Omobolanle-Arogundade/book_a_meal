@@ -1,7 +1,28 @@
 {
+    "newUser": {
         "firstName": "Omobolanle",
         "lastName": "Atomist",
-        "email": "omobolanle@gmail.com",
+        "email": "newUser@gmail.com",
         "phoneNo": "09053560204",
-        "password": "busolami"
+        "password": "testuser"
+    },
+    "oldUser": {
+        "firstName": "Omobolanle",
+        "lastName": "Atomist",
+        "email": "omobolanlearogundade@gmail.com",
+        "phoneNo": "09053560204",
+        "password": "testUser"
+    },
+    "user": {
+        "email": "omobolanlearogundade@gmail.com",
+        "password": "somethingfishy"
+    },
+    "invalid_user": {
+        "email": "notauser@gmail.com",
+        "password": "notauser"
+    },
+    "invalid_password": {
+        "email": "omobolanlearogundade@gmail.com",
+        "password": "wrongpassword"
+    }
 }

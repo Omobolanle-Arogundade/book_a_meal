@@ -15,14 +15,8 @@ describe('Auth\'s endpoints test', () => {
   describe('Add user endpoint', () => {
     it('should add a new user', (done) => {
       request(app)
-        .post('/api/v1/auth/login')
-        .send({
-          firstName: 'Omobolanle',
-          lastName: 'Atomist',
-          email: 'omobolanle@gmail.com',
-          phoneNo: '09053560204',
-          password: 'busolami',
-        })
+        .post('/api/v1/auth/signup')
+        .send(user.newUser)
         .expect(201)
         .expect((res) => {
           expect(res.body)
@@ -36,9 +30,9 @@ describe('Auth\'s endpoints test', () => {
 
     it('should only allow unique users', (done) => {
       request(app)
-        .post('/api/v1/auth/login')
-        .send(user)
-        .expect(201)
+        .post('/api/v1/auth/signup')
+        .send(user.oldUser)
+        .expect(400)
         .expect((res) => {
           expect(res.body)
             .toBeA('object');
@@ -50,79 +44,53 @@ describe('Auth\'s endpoints test', () => {
     });
   });
 
-
-  /*
-  // test for fetch a meal API
-  // test to see if the res body is an object
-  // test to see if the response data is an object and if it includes required keys
+  /**
+  *
   */
-  // describe('Get a meal API', () => {
-  //   // should get a meal by id, and return the object including the required keys
-  //   it('should get a meal by id', (done) => {
-  //     request(app)
-  //       .get('/api/v1/meals/1')
-  //       .expect(200)
-  //       .expect((res) => {
-  //         expect(res.body)
-  //           .toBeA('object');
-  //         expect(res.body.data)
-  //           .toBeA('object')
-  //           .toIncludeKeys(['id', 'name', 'size', 'price']);
-  //       })
-  //       .end(done);
-  //   });
+  describe('Add user endpoint', () => {
+    it('should log user in the app', (done) => {
+      request(app)
+        .post('/api/v1/auth/login')
+        .send(user.user)
+        .expect(200)
+        .expect((res) => {
+          expect(res.body)
+            .toBeA('object');
+          expect(res.body.user)
+            .toBeA('object')
+            .toIncludeKeys(['id', 'name', 'email', 'phoneNo']);
+        })
+        .end(done);
+    });
 
-  //   // should return status:204 when user enters a meal id that doesn't exit
-  //   it('should return a 204 for a meal id that doen\'t exist', (done) => {
-  //     request(app)
-  //       .get('/api/v1/meals/40')
-  //       .expect(204)
-  //       .end(done);
-  //   });
-  // });
+    it('should return invalid user email', (done) => {
+      request(app)
+        .post('/api/v1/auth/login')
+        .send(user.invalid_user)
+        .expect(400)
+        .expect((res) => {
+          expect(res.body)
+            .toBeA('object');
+          expect(res.body.message)
+            .toBeA('string')
+            .toEqual('User with provided enail doesn\'t exist');
+        })
+        .end(done);
+    });
 
-  // /*
-  // // tests for delete a meal API
-  // */
-  // describe('Delete Meals API', () => {
-  //   // test to see if we get a status: 202, when we delete a meal
-  //   it('should delete a meal by id', (done) => {
-  //     request(app)
-  //       .delete('/api/v1/meals/1')
-  //       .expect(202)
-  //       .end(done);
-  //   });
-
-  //   // test if we get a status: 204 when the delete id doesn't exist
-  //   it('should return a 204 if meal id doesn\'t exist', (done) => {
-  //     request(app)
-  //       .delete('/api/v1/meals/50')
-  //       .expect(204)
-  //       .end(done);
-  //   });
-  // });
-
-
-  // /*
-  // // tests for update a meal API
-  // */
-  // describe('Update Meals API', () => {
-  //   // test to see if we get a status: 202, when we update a meal
-  //   it('should update a meal by id', (done) => {
-  //     request(app)
-  //       .put('/api/v1/meals/3')
-  //       .send(meal)
-  //       .expect(202)
-  //       .end(done);
-  //   });
-
-  //   // test if we get a status: 204 when the update id doesn't exist
-  //   it('should return a 204 if meal id doesn\'t exist', (done) => {
-  //     request(app)
-  //       .put('/api/v1/meals/50')
-  //       .send(meal)
-  //       .expect(204)
-  //       .end(done);
-  //   });
-  // });
+    it('should return invalid user password', (done) => {
+      request(app)
+        .post('/api/v1/auth/login')
+        .send(user.invalid_password)
+        .expect(400)
+        .expect((res) => {
+          expect(res.body)
+            .toBeA('object');
+          expect(res.body.message)
+            .toBeA('string')
+            .toEqual('Password doesn\'t match');
+        })
+        .end(done);
+    });
+  });
 });
