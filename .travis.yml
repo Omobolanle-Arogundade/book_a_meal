@@ -16,7 +16,7 @@ before_script:
   # Postgres before_script
   - npm install -g sequelize-cli
   - psql -c "CREATE USER tester WITH PASSWORD 'password';" -U postgres
-  # - psql -c "DROP DATABASE book_a_meal;" -U postgres
+  - psql -c "DROP DATABASE book_a_meal;" -U postgres
   - psql -c 'create database book_a_meal;' -U postgres
   # - sequelize db:seed:all
 
