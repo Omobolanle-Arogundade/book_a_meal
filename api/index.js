@@ -11,9 +11,7 @@ import authRoutes from './routes/auth.routes';
 // import menuRoutes from './routes/menu.routes';
 // import orderRoutes from './routes/order.routes';
 
-// import mealRoutes from './routes/meal.routes';
-
-
+import mealRoutes from './routes/meal.routes';
 
 config.config();
 
@@ -30,7 +28,7 @@ app.use(cors());
 
 // Route handlers
 app.use('/api/v1/auth', authRoutes);
-// app.use('/api/v1/meals', mealRoutes);
+app.use('/api/v1/meals', mealRoutes);
 // app.use('/api/v1/menu', menuRoutes);
 // app.use('/api/v1/orders', orderRoutes);
 
