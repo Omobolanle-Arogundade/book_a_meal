@@ -55,12 +55,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     permissions: {
       type: DataTypes.ARRAY(DataTypes.STRING),
-      defaultValue: [],
       allowNull: true,
     },
     role_id: {
       type: DataTypes.STRING,
-      defaultValue: 3,
       allowNull: true,
     },
     deleted: {
