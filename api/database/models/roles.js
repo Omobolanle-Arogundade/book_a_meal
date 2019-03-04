@@ -1,20 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
   const Roles = sequelize.define('Roles', {
-    role_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
         msg: 'Please enter role name!!',
       },
     },
-    role_description: {
+    description: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
         msg: 'Please enter role description!!',
       },
     },
-    role_permissions: {
+    permissions: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       defaultValue: [],
       allowNull: {

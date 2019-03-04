@@ -1,20 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
-    user_firstName: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
         msg: 'Please enter your first name!!',
       },
     },
-    user_lastName: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
         msg: 'Please enter your last name!!',
       },
     },
-    user_email: {
+    email: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    user_phoneNo: {
+    phoneNo: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: {
@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         msg: 'Phone number already exists!!',
       },
     },
-    user_password: {
+    password: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
@@ -53,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    user_permissions: {
+    permissions: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       defaultValue: [],
       allowNull: true,
