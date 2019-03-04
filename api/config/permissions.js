@@ -1,6 +1,6 @@
 const permissions = {
   0: 'global',
-  1: 'readUuser',
+  1: 'readUser',
   2: 'writeAdmin',
   3: 'writeMenu',
   4: 'readMenu',

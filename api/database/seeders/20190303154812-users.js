@@ -1,5 +1,5 @@
 import permissions from '../../config/permissions';
-import hashPassword from '../../services/hash-password';
+import hashPassword from '../../helpers/hash-password';
 
 const date = new Date();
 
@@ -43,7 +43,6 @@ module.exports = {
     permissions: [
       permissions[1],
       permissions[4],
-      permissions[6],
       permissions[7],
       permissions[8],
     ],

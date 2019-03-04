@@ -1,13 +1,13 @@
 import db from '../database/models';
-import hashPassword from '../services/hash-password';
+import hashPassword from '../helpers/hash-password';
 
 import 'idempotent-babel-polyfill';
-import comparePassword from '../services/compare-password';
-import Token from '../services/token';
-import permission from '../config/permissions';
+import comparePassword from '../helpers/compare-password';
+import Token from '../helpers/token';
+// import permission from '../config/permissions';
 
 
-const { Users } = db;
+const { Users, Roles } = db;
 
 export default class AuthController {
   /**
@@ -20,28 +20,11 @@ export default class AuthController {
     try {
     /*eslint-disable */
       // set default value for role_od
-      console.log(req.body.role_id, 'role id');
       const role_id = req.body.role_id ? req.body.role_id : 3;
-      let permissions;
-
-      if (role_id === 2) {
-        permissions = [
-          permission[1],
-          permission[3],
-          permission[4],
-          permission[5],
-          permission[6],
-          permission[8],
-        ]
-      } else if (role_id === 3) {
-         permissions = [
-          permission[1],
-          permission[4],
-          permission[6],
-          permission[7],
-          permission[8],
-        ]
-      }
+      let Role = [];
+      Role = await Roles.findByPk(role_id);
+      console.log('Roles:', Role);
+      const permissions = Role.permissions;
       const {
         firstName,
         lastName,
