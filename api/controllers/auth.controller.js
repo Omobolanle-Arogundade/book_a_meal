@@ -90,7 +90,7 @@ export default class AuthController {
         });
       }
     } catch (err) {
-      return res.status(500).json({
+      return res.status(400).json({
         status: 'error',
         message: err.message,
       });

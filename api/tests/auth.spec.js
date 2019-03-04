@@ -43,4 +43,54 @@ describe('Auth\'s endpoints test', () => {
         .end(done);
     });
   });
+
+  /**
+  *
+  */
+  describe('Add user endpoint', () => {
+    it('should log user in the app', (done) => {
+      request(app)
+        .post('/api/v1/auth/login')
+        .send(user.user)
+        .expect(200)
+        .expect((res) => {
+          expect(res.body)
+            .toBeA('object');
+          expect(res.body.user)
+            .toBeA('object')
+            .toIncludeKeys(['id', 'name', 'email', 'phoneNo']);
+        })
+        .end(done);
+    });
+
+    it('should return invalid user email', (done) => {
+      request(app)
+        .post('/api/v1/auth/login')
+        .send(user.invalid_user)
+        .expect(400)
+        .expect((res) => {
+          expect(res.body)
+            .toBeA('object');
+          expect(res.body.message)
+            .toBeA('string')
+            .toEqual('User with provided enail doesn\'t exist');
+        })
+        .end(done);
+    });
+
+    it('should return invalid user password', (done) => {
+      request(app)
+        .post('/api/v1/auth/login')
+        .send(user.invalid_password)
+        .expect(400)
+        .expect((res) => {
+          expect(res.body)
+            .toBeA('object');
+          expect(res.body.message)
+            .toBeA('string')
+            .toEqual('Password doesn\'t match');
+        })
+        .end(done);
+    });
+  });
 });
