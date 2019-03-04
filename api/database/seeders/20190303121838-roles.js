@@ -5,9 +5,9 @@ const date = new Date();
 module.exports = {
   up: queryInterface => queryInterface.bulkInsert('Roles', [
     {
-      role_name: 'admin',
-      role_description: 'This role can perform every action in the system',
-      role_permissions: [
+      name: 'admin',
+      description: 'This role can perform every action in the system',
+      permissions: [
         permissions[0],
       ],
       createdAt: date,
@@ -15,9 +15,9 @@ module.exports = {
     },
 
     {
-      role_name: 'caterer',
-      role_description: 'This role can perform some of admin actions in the system',
-      role_permissions: [
+      name: 'caterer',
+      description: 'This role can perform some of admin actions in the system',
+      permissions: [
         permissions[1],
         permissions[3],
         permissions[4],
@@ -30,9 +30,9 @@ module.exports = {
     },
 
     {
-      role_name: 'user',
-      role_description: 'The role for user only',
-      role_permissions: [
+      name: 'user',
+      description: 'The role for user only',
+      permissions: [
         permissions[1],
         permissions[4],
         permissions[6],

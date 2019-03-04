@@ -8,11 +8,7 @@ const router = Router();
 
 router.post('/signup', userValidator.validateSignUp, AuthController.addUser);
 
-// router.get('/:id', MealController.fetchMeal);
-
-// router.put('/:id', MealController.updateMeal);
-
-// router.delete('/:id', MealController.deleteMeal);
+router.post('/login', userValidator.validateLogin, AuthController.login);
 
 
 export default router;

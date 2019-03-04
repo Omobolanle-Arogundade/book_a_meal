@@ -6,22 +6,22 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    user_firstName: {
+    firstName: {
       type: Sequelize.STRING,
     },
-    user_lastName: {
+    lastName: {
       type: Sequelize.STRING,
     },
-    user_email: {
+    email: {
       type: Sequelize.STRING,
     },
-    user_phoneNo: {
+    phoneNo: {
       type: Sequelize.STRING,
     },
-    user_password: {
+    password: {
       type: Sequelize.STRING,
     },
-    user_permissions: {
+    permissions: {
       type: Sequelize.ARRAY(Sequelize.STRING),
       allowNull: true,
       defaultValue: [],

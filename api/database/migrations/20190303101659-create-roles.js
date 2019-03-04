@@ -6,13 +6,13 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    role_name: {
+    name: {
       type: Sequelize.STRING,
     },
-    role_description: {
+    description: {
       type: Sequelize.STRING,
     },
-    role_permissions: {
+    permissions: {
       type: Sequelize.ARRAY(Sequelize.STRING),
     },
     createdAt: {
