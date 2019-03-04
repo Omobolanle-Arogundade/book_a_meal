@@ -1,7 +1,16 @@
 {
+    "newUser": {
         "firstName": "Omobolanle",
         "lastName": "Atomist",
-        "email": "omobolanle@gmail.com",
+        "email": "testing@gmail.com",
         "phoneNo": "09053560204",
         "password": "busolami"
+    },
+    "oldUser": {
+        "firstName": "Omobolanle",
+        "lastName": "Atomist",
+        "email": "omobolanlearogundade@gmail.com",
+        "phoneNo": "09053560204",
+        "password": "busolami"
+    }
 }
