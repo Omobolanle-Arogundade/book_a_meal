@@ -27,15 +27,24 @@ export default class AuthController {
         password,
       } = req.body;
    /* eslint-enable */
-      // hash user password
-      const hashedPassword = hashPassword(password);
-      const user = await Users.create({
-        firstName, lastName, email, phoneNo, password: hashedPassword, role_id,
-      });
-      return res.status(201).json({
-        status: 'success',
-        message: 'User succesfully Registered',
-        user,
+
+      const findUser = await Users.findOne({ where: { email } });
+
+      if (!findUser) {
+        // hash user password
+        const hashedPassword = hashPassword(password);
+        const user = await Users.create({
+          firstName, lastName, email, phoneNo, password: hashedPassword, role_id,
+        });
+        return res.status(201).json({
+          status: 'success',
+          message: 'User succesfully Registered',
+          user,
+        });
+      }
+      return res.status(400).json({
+        status: 'Bad Request',
+        message: 'User already exist',
       });
     } catch (err) {
       return res.status(500).json({
