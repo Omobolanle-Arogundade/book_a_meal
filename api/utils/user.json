@@ -2,7 +2,7 @@
     "newUser": {
         "firstName": "Omobolanle",
         "lastName": "Atomist",
-        "email": "testing@gmail.com",
+        "email": "newUser@gmail.com",
         "phoneNo": "09053560204",
         "password": "testuser"
     },
