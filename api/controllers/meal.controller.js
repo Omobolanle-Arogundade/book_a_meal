@@ -28,8 +28,8 @@ class MealController {
     const meal = req.body;
     const user_id = req.decodedToken.user.id;
     try {
-      const updateMeal = await MealService.updateMeal(user_id, req.params.id, meal);
-      res.status(202).send(Parser.customParser(202, updateMeal));
+      const updateMealRes = await MealService.updateMeal(user_id, req.params.id, meal);
+      res.status(202).send(Parser.customParser(202, updateMealRes));
     } catch (error) {
       res.status(500).json(Parser.customParser(500, error.error));
     }
@@ -47,8 +47,8 @@ class MealController {
 
   static async deleteMeal(req, res) {
     try {
-      const deleteMeal = await MealService.deleteMeal(req.params.id);
-      res.status(202).send(Parser.customParser(202, deleteMeal));
+      const deleteMealRes = await MealService.deleteMeal(req.params.id);
+      res.status(202).send(Parser.customParser(202, deleteMealRes));
     } catch (error) {
       res.status(500).json(Parser.customParser(500, error.error));
     }
