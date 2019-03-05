@@ -26,7 +26,7 @@ module.exports = {
       allowNull: true,
       defaultValue: [],
     },
-    role_id: {
+    roleId: {
       type: Sequelize.STRING,
       defaultValue: 3,
     },

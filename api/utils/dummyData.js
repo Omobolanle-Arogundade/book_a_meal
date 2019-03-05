@@ -83,11 +83,11 @@ export default {
       customerId: '2',
       meals: [
         {
-          meal_id: '1',
+          mealId: '1',
           meal_quantity: '2',
         },
         {
-          meal_id: '3',
+          mealId: '3',
           meal_quantity: '1',
         },
       ],
@@ -98,11 +98,11 @@ export default {
       customerId: '4',
       meals: [
         {
-          meal_id: '1',
+          mealId: '1',
           meal_quantity: '2',
         },
         {
-          meal_id: '5',
+          mealId: '5',
           meal_quantity: '1',
         },
       ],
@@ -113,11 +113,11 @@ export default {
       customerId: '7',
       meals: [
         {
-          meal_id: '6',
+          mealId: '6',
           meal_quantity: '2',
         },
         {
-          meal_id: '3',
+          mealId: '3',
           meal_quantity: '1',
         },
       ],
@@ -128,11 +128,11 @@ export default {
       customerId: '4',
       meals: [
         {
-          meal_id: '5',
+          mealId: '5',
           meal_quantity: '1',
         },
         {
-          meal_id: '3',
+          mealId: '3',
           meal_quantity: '1',
         },
       ],
