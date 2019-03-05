@@ -6,13 +6,13 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    user_id: {
+    userId: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
         key: 'id',
-        as: 'user_id',
+        as: 'userId',
       },
     },
     name: {

@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true,
     },
-    role_id: {
+    roleId: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -70,12 +70,12 @@ module.exports = (sequelize, DataTypes) => {
   Users.associate = (models) => {
     // associations can be defined here
     Users.belongsTo(models.Roles, {
-      foreignKey: 'role_id',
+      foreignKey: 'roleId',
       as: 'Role',
     });
 
     // Users.hasMany(models.Orders, {
-    //   foreignKey: 'user_id',
+    //   foreignKey: 'userId',
     //   as: 'Orders',
     // });
   };

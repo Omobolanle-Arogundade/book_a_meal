@@ -33,9 +33,9 @@ class MealService {
     }
   }
 
-  static async getMeals(user_id) {
+  static async getMeals(userId) {
     try {
-      const meals = await Meals.findAll({ where: { user_id } });
+      const meals = await Meals.findAll({ where: { userId } });
       const response = {
         meals,
       };
@@ -48,11 +48,11 @@ class MealService {
   }
 
 
-  static async updateMeal(user_id, id, meal) {
+  static async updateMeal(userId, id, meal) {
     try {
-      const updatedMeal = await Meals.update(meal, { where: { user_id, id } });
+      const updatedMeal = await Meals.update(meal, { where: { userId, id } });
       if (updatedMeal[0] === 0) {
-        const err = { error: 'invalid meal_id' };
+        const err = { error: 'invalid mealId' };
         throw err;
       }
       const response = {
@@ -61,7 +61,7 @@ class MealService {
       };
       return response;
     } catch (e) {
-      const err = { error: 'invalid meal_id' };
+      const err = { error: 'invalid mealId' };
       throw err;
     }
   }
@@ -71,7 +71,7 @@ class MealService {
     try {
       const meal = await Meals.findOne({ where: { id } });
       if (!meal) {
-        const err = { error: 'Invalid meal_id' };
+        const err = { error: 'Invalid mealId' };
         throw err;
       }
       const response = {
@@ -88,20 +88,18 @@ class MealService {
       const err = { error: 'Invalid meal Id' };
       throw err;
     }
-    // return meal_id;
+    // return mealId;
   }
 
 
   static async deleteMeal(id) {
     try {
       const meal = await Meals.destroy({ where: { id } });
-      console.log('meal:', meal);
       if (meal === 0) {
         // create and throw 500 error
         const err = { error: 'an error occured' };
         throw err;
       }
-      console.log('meal:', meal);
       const resp = {
         message: 'Meal deleted successfully',
       };

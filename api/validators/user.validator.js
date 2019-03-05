@@ -16,7 +16,7 @@ class userValidator {
         email: Joi.string().email().required(),
         phoneNo: Joi.string().min(11).required(),
         password: Joi.string().min(8).required(),
-        role_id: Joi.number().optional(),
+        roleId: Joi.number().optional(),
       };
       await Joi.validate(req.body, schema);
       next();

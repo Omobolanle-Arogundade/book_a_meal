@@ -1,16 +1,7 @@
-import db from '../database/models';
-import hashPassword from '../helpers/hash-password';
-
 import 'idempotent-babel-polyfill';
-import comparePassword from '../helpers/compare-password';
-import Token from '../helpers/token';
 import Parser from '../helpers/parser';
 import AuthService from '../services/auth.service';
 // import permission from '../config/permissions';
-
-
-const { Users, Roles } = db;
-
 export default class AuthController {
   /**
    * @description This method creates a user and adds the user to the databse
@@ -24,7 +15,7 @@ export default class AuthController {
       const userRes = await AuthService.createUser(user);
       res.status(201).send(Parser.customParser(201, userRes));
     } catch (error) {
-      res.status(401).json(Parser.customParser(401, error.error));
+      res.status(400).json(Parser.customParser(400, error.error));
     }
   }
 
@@ -40,7 +31,7 @@ export default class AuthController {
       const userRes = await AuthService.login(user);
       res.status(201).send(Parser.customParser(201, userRes));
     } catch (error) {
-      res.status(401).json(Parser.customParser(401, error.error));
+      res.status(400).json(Parser.customParser(400, error.error));
     }
     // try {
     //   const { email, password } = req.body;

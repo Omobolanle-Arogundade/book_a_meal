@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Meals = sequelize.define('Meals', {
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
         key: 'id',
-        as: 'user_id',
+        as: 'userId',
       },
     },
     name: {
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Meals.associate = (models) => {
     Meals.belongsTo(models.Users, {
-      foreignKey: 'user_id',
+      foreignKey: 'userId',
       as: 'Users',
     });
   };

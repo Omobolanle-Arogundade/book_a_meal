@@ -21,9 +21,11 @@ describe('Auth\'s endpoints test', () => {
         .expect((res) => {
           expect(res.body)
             .toBeA('object');
-          expect(res.body.user)
+          expect(res.body.data.message)
+            .toBe('User successfully Registered');
+          expect(res.body.data.user)
             .toBeA('object')
-            .toIncludeKeys(['firstName', 'lastName', 'email', 'phoneNo']);
+            .toIncludeKeys(['firstName', 'lastName', 'email', 'phoneNo', 'roleId']);
         })
         .end(done);
     });
@@ -36,7 +38,7 @@ describe('Auth\'s endpoints test', () => {
         .expect((res) => {
           expect(res.body)
             .toBeA('object');
-          expect(res.body.message)
+          expect(res.body.error)
             .toBeA('string')
             .toEqual('User already exist');
         })
@@ -52,13 +54,13 @@ describe('Auth\'s endpoints test', () => {
       request(app)
         .post('/api/v1/auth/login')
         .send(user.user)
-        .expect(200)
+        .expect(201)
         .expect((res) => {
           expect(res.body)
             .toBeA('object');
-          expect(res.body.user)
+          expect(res.body.data.user)
             .toBeA('object')
-            .toIncludeKeys(['id', 'name', 'email', 'phoneNo']);
+            .toIncludeKeys(['id', 'firstName', 'lastName', 'email', 'phoneNo', 'permissions', 'roleId']);
         })
         .end(done);
     });
@@ -71,7 +73,7 @@ describe('Auth\'s endpoints test', () => {
         .expect((res) => {
           expect(res.body)
             .toBeA('object');
-          expect(res.body.message)
+          expect(res.body.error)
             .toBeA('string')
             .toEqual('User with provided enail doesn\'t exist');
         })
@@ -86,7 +88,7 @@ describe('Auth\'s endpoints test', () => {
         .expect((res) => {
           expect(res.body)
             .toBeA('object');
-          expect(res.body.message)
+          expect(res.body.error)
             .toBeA('string')
             .toEqual('Password doesn\'t match');
         })

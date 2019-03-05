@@ -12,9 +12,9 @@ class AuthService {
       firstName, lastName, email, phoneNo, password,
     } = user;
     try {
-      const role_id = user.role_id ? user.role_id : 3;
+      const roleId = user.roleId ? user.roleId : 3;
       let Role = [];
-      Role = await Roles.findByPk(role_id);
+      Role = await Roles.findByPk(roleId);
       const { permissions } = Role;
       const findUser = await Users.findOne({ where: { email } });
       let response = {};
@@ -22,7 +22,7 @@ class AuthService {
         // hash user password
         const hashedPassword = hashPassword(password);
         const newUser = await Users.create({
-          firstName, lastName, email, phoneNo, password: hashedPassword, role_id, permissions,
+          firstName, lastName, email, phoneNo, password: hashedPassword, roleId, permissions,
         });
         response = {
           message: 'User successfully Registered',
@@ -32,7 +32,7 @@ class AuthService {
             lastName: newUser.lastName,
             email: newUser.email,
             phoneNo: newUser.phoneNo,
-            role_id: newUser.role_id,
+            roleId: newUser.roleId,
           },
         };
         return response;
@@ -67,7 +67,7 @@ class AuthService {
           email: findUser.email,
           phoneNo: findUser.phoneNo,
           permissions: findUser.permissions,
-          role_id: findUser.role_id,
+          roleId: findUser.roleId,
         };
         const token = Token.generateToken({ user: foundUser });
         response = {

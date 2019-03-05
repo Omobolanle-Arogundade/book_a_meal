@@ -15,7 +15,9 @@ class Auth {
       }
       req.decodedToken = decoded;
       next();
+      return next;
     });
+    return true;
   }
 }
 export default Auth;

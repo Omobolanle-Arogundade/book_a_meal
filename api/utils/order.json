@@ -3,11 +3,11 @@
   "customerId": "55",
   "meals": [
     {
-      "meal_id": "1",
+      "mealId": "1",
       "meal_quantity": "6"
     },
     {
-      "meal_id": "3",
+      "mealId": "3",
       "meal_quantity": "10"
     }
   ]
