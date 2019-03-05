@@ -29,7 +29,7 @@ export default class AuthController {
     const user = req.body;
     try {
       const userRes = await AuthService.login(user);
-      res.status(201).send(Parser.customParser(201, userRes));
+      res.status(200).send(Parser.customParser(200, userRes));
     } catch (error) {
       res.status(400).json(Parser.customParser(400, error.error));
     }

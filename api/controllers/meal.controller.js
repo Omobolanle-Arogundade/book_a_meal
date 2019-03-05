@@ -31,7 +31,7 @@ class MealController {
       const updateMealRes = await MealService.updateMeal(userId, req.params.id, meal);
       res.status(202).send(Parser.customParser(202, updateMealRes));
     } catch (error) {
-      res.status(500).json(Parser.customParser(500, error.error));
+      res.status(401).json(Parser.customParser(401, error.error));
     }
   }
 
@@ -41,7 +41,7 @@ class MealController {
       const mealRes = await MealService.fetchMeal(mealId);
       res.send(Parser.customParser(200, mealRes));
     } catch (error) {
-      res.status(500).json(Parser.customParser(500, error.error));
+      res.status(401).json(Parser.customParser(401, error.error));
     }
   }
 
@@ -50,7 +50,7 @@ class MealController {
       const deleteMealRes = await MealService.deleteMeal(req.params.id);
       res.status(202).send(Parser.customParser(202, deleteMealRes));
     } catch (error) {
-      res.status(500).json(Parser.customParser(500, error.error));
+      res.status(401).json(Parser.customParser(401, error.error));
     }
   }
 }

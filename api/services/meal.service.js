@@ -42,7 +42,7 @@ class MealService {
       return response;
     } catch (e) {
       // create and throw 500 error
-      const err = { error: 'error in get Meals' };
+      const err = { error: e.error || 'error in get Meals' };
       throw err;
     }
   }
@@ -61,7 +61,7 @@ class MealService {
       };
       return response;
     } catch (e) {
-      const err = { error: 'invalid mealId' };
+      const err = { error: e.error || 'Invalid meal Id' };
       throw err;
     }
   }
@@ -85,7 +85,7 @@ class MealService {
       };
       return response;
     } catch (e) {
-      const err = { error: 'Invalid meal Id' };
+      const err = { error: e.error || 'Invalid meal Id' };
       throw err;
     }
     // return mealId;
@@ -106,7 +106,7 @@ class MealService {
       return resp;
     } catch (e) {
       // create and throw 500 error
-      const err = { error: 'an error occured' };
+      const err = { error: e.error || 'Invalid meal Id' };
       throw err;
     }
   }

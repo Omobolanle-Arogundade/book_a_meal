@@ -54,7 +54,7 @@ describe('Auth\'s endpoints test', () => {
       request(app)
         .post('/api/v1/auth/login')
         .send(user.user)
-        .expect(201)
+        .expect(200)
         .expect((res) => {
           expect(res.body)
             .toBeA('object');

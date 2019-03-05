@@ -1,8 +1,15 @@
 {
-  "name": "eba and egusi",
-  "description": "here is some story about the meal",
-  "size": "medium",
-  "price": "600",
-  "catererId": 2,
-  "image": "abc.xyz"
+  "newMeal": {
+    "name": "eba and egusi",
+    "description": "here is some story about the meal",
+    "price": "600",
+    "image_url": "abc.xyz"
+  },
+
+  "updateMeal": {
+    "name": "Pizza and Cold Stone",
+    "description": "here is some story about the meal",
+    "price": "600",
+    "image_url": "abc.xyz"
+  }
 }
