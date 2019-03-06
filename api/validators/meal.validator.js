@@ -1,13 +1,6 @@
 import Joi from 'joi';
 
 class mealValidator {
-  /**
-   * validate SignUp middleware
-   * this checks if all the required fields are entered and if value entered is valid
-   * @param {*} req
-   * @param {*} res
-   * @param {*} next
-   */
   static async validateMeal(req, res, next) {
     try {
       const schema = {
