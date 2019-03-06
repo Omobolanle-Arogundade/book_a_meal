@@ -33,39 +33,5 @@ export default class AuthController {
     } catch (error) {
       res.status(400).json(Parser.customParser(400, error.error));
     }
-    // try {
-    //   const { email, password } = req.body;
-    //   const user = await Users.findOne({ where: { email } });
-    //   if (!user) {
-    //     throw new Error('User with provided enail doesn\'t exist');
-    //   } else if (!comparePassword(password, user.password)) {
-    //     throw new Error('Password doesn\'t match');
-    //   } else {
-    //     const safeUser = {
-    //       id: user.id,
-    //       firstName: user.firstName,
-    //       email: user.email,
-    //       phone: user.phoneNo,
-    //       permissions: user.permissions,
-    //     };
-    //     const token = Token.generateToken({ user: safeUser });
-    //     return res.status(200).json({
-    //       status: 'success',
-    //       message: 'User Logged In',
-    //       token,
-    //       user: {
-    //         id: user.id,
-    //         name: `${user.firstName} ${user.lastName}`,
-    //         email: user.email,
-    //         phoneNo: user.phoneNo,
-    //       },
-    //     });
-    //   }
-    // } catch (err) {
-    //   return res.status(400).json({
-    //     status: 'error',
-    //     message: err.message,
-    //   });
-    // }
   }
 }
