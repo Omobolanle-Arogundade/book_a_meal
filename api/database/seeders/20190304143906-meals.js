@@ -18,7 +18,7 @@ module.exports = {
     image_url: 'https://image2.com',
     createdAt: date,
     updatedAt: date,
-  }], {}),
+  }]),
 
   down: queryInterface => queryInterface.bulkDelete('Users', null, {}),
 };

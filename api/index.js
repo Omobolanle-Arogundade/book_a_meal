@@ -3,15 +3,14 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import config from 'dotenv';
 import cors from 'cors';
-import authRoutes from './routes/auth.routes';
 
 
 // Custom dependencies
-
-// import menuRoutes from './routes/menu.routes';
+import authRoutes from './routes/auth.routes';
+import mealRoutes from './routes/meal.routes';
+import menuRoutes from './routes/menu.routes';
 // import orderRoutes from './routes/order.routes';
 
-import mealRoutes from './routes/meal.routes';
 
 config.config();
 
@@ -29,7 +28,7 @@ app.use(cors());
 // Route handlers
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/meals', mealRoutes);
-// app.use('/api/v1/menu', menuRoutes);
+app.use('/api/v1/menu', menuRoutes);
 // app.use('/api/v1/orders', orderRoutes);
 
 // Setup a default catch-all route that sends back a welcome message in JSON format.

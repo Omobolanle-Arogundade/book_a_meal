@@ -99,12 +99,12 @@ describe('Meals endpoint\'s test', () => {
         .end(done);
     });
 
-    // should return status:401 when user enters a meal id that doesn't exit
-    it('should return a 401 for a meal id that doen\'t exist', (done) => {
+    // should return status:400 when user enters a meal id that doesn't exit
+    it('should return a 400 for a meal id that doen\'t exist', (done) => {
       request(app)
         .get('/api/v1/meals/40')
         .set('Authorization', token)
-        .expect(401)
+        .expect(400)
         .end(done);
     });
   });
@@ -122,12 +122,12 @@ describe('Meals endpoint\'s test', () => {
         .end(done);
     });
 
-    //  test if we get a status: 401 when the delete id doesn't exist
-    it('should return a 401 if meal id doesn\'t exist', (done) => {
+    //  test if we get a status: 400 when the delete id doesn't exist
+    it('should return a 400 if meal id doesn\'t exist', (done) => {
       request(app)
         .delete('/api/v1/meals/50')
         .set('Authorization', token)
-        .expect(401)
+        .expect(400)
         .end(done);
     });
   });
@@ -147,13 +147,13 @@ describe('Meals endpoint\'s test', () => {
         .end(done);
     });
 
-    // test if we get a status: 401 when the update id doesn't exist
-    it('should return a 401 if meal id doesn\'t exist', (done) => {
+    // test if we get a status: 400 when the update id doesn't exist
+    it('should return a 400 if meal id doesn\'t exist', (done) => {
       request(app)
         .put('/api/v1/meals/50')
         .set('Authorization', token)
         .send(meals.updateMeal)
-        .expect(401)
+        .expect(400)
         .end(done);
     });
   });

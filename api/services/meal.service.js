@@ -12,22 +12,28 @@ class MealService {
    */
   static async createMeal(meal) {
     try {
-      const createdMeal = await Meals.create(meal);
-      const response = {
-        message: 'Meal created successfully',
-        meal: {
-          id: createdMeal.id,
-          name: createdMeal.name,
-          description: createdMeal.description,
-          price: createdMeal.price,
-          image_url: createdMeal.image_url,
-        },
-      };
-      return response;
+      const storedMeal = await Meals.findOne({ where: { name: meal.name } });
+      if (!storedMeal) {
+        const createdMeal = await Meals.create(meal);
+
+        const response = {
+          message: 'Meal created successfully',
+          meal: {
+            id: createdMeal.id,
+            name: createdMeal.name,
+            description: createdMeal.description,
+            price: createdMeal.price,
+            image_url: createdMeal.image_url,
+          },
+        };
+        return response;
+      }
+      const err = { error: 'Meal already exist' };
+      throw err;
     } catch (e) {
       // create and throw 500 error
       const err = {
-        error: 'error in create meal',
+        error: e.error || 'error in create meal',
       };
       throw err;
     }
@@ -96,7 +102,6 @@ class MealService {
     try {
       const meal = await Meals.destroy({ where: { id } });
       if (meal === 0) {
-        // create and throw 500 error
         const err = { error: 'an error occured' };
         throw err;
       }
@@ -105,7 +110,6 @@ class MealService {
       };
       return resp;
     } catch (e) {
-      // create and throw 500 error
       const err = { error: e.error || 'Invalid meal Id' };
       throw err;
     }

@@ -35,6 +35,7 @@ module.exports = {
       permissions: [
         permissions[1],
         permissions[4],
+        permissions[6],
         permissions[7],
         permissions[8],
       ],

@@ -3,7 +3,7 @@ import { Router } from 'express';
 import MealController from '../controllers/meal.controller';
 import Auth from '../middlewares/auth';
 import mealAuthentication from '../middlewares/meal.auth';
-import mealValidator from '../validators/meal.validators';
+import mealValidator from '../validators/meal.validator';
 
 
 const router = Router();
