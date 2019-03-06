@@ -12,9 +12,10 @@ class MealService {
    */
   static async createMeal(meal) {
     try {
-      const createdMeal = await Meals.create(meal);
       const storedMeal = await Meals.findOne({ where: { name: meal.name } });
       if (!storedMeal) {
+        const createdMeal = await Meals.create(meal);
+
         const response = {
           message: 'Meal created successfully',
           meal: {
@@ -32,7 +33,7 @@ class MealService {
     } catch (e) {
       // create and throw 500 error
       const err = {
-        error: 'error in create meal',
+        error: e.error || 'error in create meal',
       };
       throw err;
     }

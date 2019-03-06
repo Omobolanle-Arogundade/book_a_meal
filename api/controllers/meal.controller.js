@@ -10,7 +10,7 @@ class MealController {
       const mealRes = await MealService.createMeal(meal);
       res.status(201).send(Parser.customParser(201, mealRes));
     } catch (error) {
-      res.status(500).json(Parser.customParser(500, error.error));
+      res.status(400).json(Parser.customParser(400, error.error));
     }
   }
 
@@ -20,7 +20,7 @@ class MealController {
       const mealRes = await MealService.getMeals(userId);
       res.send(Parser.customParser(200, mealRes));
     } catch (error) {
-      res.status(500).json(Parser.customParser(500, error.error));
+      res.status(400).json(Parser.customParser(400, error.error));
     }
   }
 
