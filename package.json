@@ -14,11 +14,16 @@
     "migrate": "npm run sequelize db:migrate",
     "migrate-test": "NODE_ENV=test npm run sequelize db:migrate",
     "seed": "npm run sequelize db:seed:all",
-    "seed-test": "NODE_ENV=test npm run sequelize db:seed:all"
+    "seed-test": "NODE_ENV=test npm run sequelize db:seed:all",
+    "heroku-postbuild": "npm install --production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Omobolanle-Arogundade/book_a_meal.git"
+  },
+  "engines": {
+    "node": "10.14.2",
+    "npm": "6.4.1"
   },
   "keywords": [
     "Book-a-Meal",
