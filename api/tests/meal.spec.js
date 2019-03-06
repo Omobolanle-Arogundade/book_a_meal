@@ -66,8 +66,7 @@ describe('Meals endpoint\'s test', () => {
         .set('Authorization', token)
         .expect(201)
         .expect((res) => {
-          expect(res.body)
-            .toBeA('object');
+          expect(res.body).toBeA('object');
           expect(res.body.data.meal)
             .toBeA('object')
             .toIncludeKeys(['id', 'name', 'description', 'price']);
