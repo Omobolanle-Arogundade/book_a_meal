@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Orders = sequelize.define('Orders', {
     time: {
-      type: DataTypes.DATEO,
+      type: DataTypes.DATE,
       allowNull: {
         args: false,
         msg: 'Please add a date',
